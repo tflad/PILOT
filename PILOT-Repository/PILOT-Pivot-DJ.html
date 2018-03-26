@@ -1,0 +1,429 @@
+<html>
+
+<head>
+	
+	<script type="text/javascript" src="js/jquery-3.2.1.js"></script>
+	<script type="text/javascript" 	src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
+	<script type="text/javascript" src="js/jquery.touchSwipe.min.js"></script>
+	<script src="js/hammer.min.js" ></script>
+	<script src="js/howler.js-master/howler.js-master/dist/howler.min.js"> </script>
+	<script src="js/howler.js-master/howler.js-master/src/plugins/howler.spatial.js"> </script>
+	<link rel="stylesheet" type="text/css" href="pilot-style.css" />
+	<!--<script type="text/javascript" src='zingtouch-master/src/ZingTouch.js'></script>-->
+	
+	
+	
+	
+</head>
+
+		<script>
+		var myRate = 1;
+		</script>
+
+	<script>
+	
+	
+	var kick2 = new Howl({
+			src: ['kick.wav']
+				});
+
+				//sound2.play();
+			/*
+			var snare2 = new Howl({
+			src: ['snare.wav']
+				});
+				/*
+				var sound = new Howl({  
+				     src: ['toms.mp3'],
+				       sprite: {
+				       lowtoms: [0,2],
+				       brush: [5, 2],
+				       notep: [10, 2]
+				      }
+				 });
+				*/
+					var hihat2 = new Howl({
+						src: ['hihat.wav'],
+						sprite: {
+						hihat2: [0, 900, true]}
+						});
+				var sprites = new Howl({
+				     src: ['http://127.0.0.1:8887/sprites-draft.mp3'],
+				     volume: 0.8,
+				     sprite: {
+				         lowtom: [0, 900],
+						 midtom: [1000, 900],
+						 midhitom: [2000, 900],
+						 lowhitom: [3000, 900],
+						 hitom: [4000, 900],
+						 hihat: [5000, 900, true],
+						 openhihat: [6000, 900],
+						 crash: [13000, 5000],
+						 clap: [8000, 900],
+						 snare: [9000, 900, true],
+						 rim: [10000, 900],
+						 brush1: [11000, 900],
+						 brush2: [12000, 900]
+				         //blast: [0, 2000], // start , duration
+				         //laser: [3000, 700], // sound.play('laser');
+				         //winner: [5000, 9000]
+				
+				     },
+				    // onload: function() {
+				  //       init(); // when every music or sound is loaded
+				  //   }
+				 });
+				/*
+			var crash2 = new Howl({
+			src: ['Crash.wav']
+				});
+				
+			var hihat2 = new Howl({
+			src: ['hihat.wav']
+				});
+				
+			var openhihat2 = new Howl({
+			src: ['openhihat.wav']
+				});
+				
+			var clap2 = new Howl({
+			src: ['clap.wav']
+				});
+				
+			var rim2 = new Howl({
+			src: ['rim.wav']
+				});
+				*/
+			/*
+				var sound = new Howl({
+				  src: ['sound.webm', 'sound.mp3']
+				});
+
+				// Clear listener after first call.
+				sound.once('load', function(){
+				  sound.play();
+				});
+
+				// Fires when the sound finishes playing.
+				sound.on('end', function(){
+				  console.log('Finished!');
+				});
+				
+			
+			*/
+	</script>
+		
+<div id="NW">	
+		<img draggable="false" (dragstart)="false;"
+		class='resize-fit-center'
+		src='Cowbell-White-Bg-Feather.png'
+		 onmousedown="this.src='Cowbell-Hit.png'"
+    onmouseup="this.src='Cowbell-White-Bg-Feather.png'"
+	
+		 ontouchstart="this.src='Cowbell-Hit.png'"
+    ontouchend="this.src='Cowbell-White-Bg-Feather.png'"
+		/>
+
+	<script>
+
+		
+			var myElement = document.getElementById('NW');
+
+			// create a simple instance
+			// by default, it only adds horizontal recognizers
+			var mc = new Hammer(myElement);
+
+			// let the pan gesture support all directions.
+			// this will block the vertical scrolling on a touch-device while on the element
+			mc.get('pan').set({ direction: Hammer.DIRECTION_ALL, threshold: 20 });
+
+			// listen to events...
+			mc.on("panleft panright panup pandown tap press", function(ev) {
+			   // myElement.textContent = ev.type +" gesture detected.";
+				
+  			  console.log(ev.type);
+			  console.log(ev.deltaX);
+			  console.log(ev.deltaY);
+			  
+  			  if(ev.type == "tap"){
+		
+  				sprites.play('midhitom');
+			
+  			  };
+			  
+			  if(ev.type == "pandown"){
+		
+  				 sprites.play('lowtom');
+  			  };
+			  
+			 // if(ev.type == "panup"){
+		
+  			//	  snare2.play();
+  			//  };
+			  
+			  if(ev.type == "panleft"){
+		
+  				  sprites.play('hitom');
+				  //toms.stereo(-1);
+  			  };
+			  
+			  if(ev.type == "panright"){
+		
+  				  sprites.play('midtom');
+				  
+  			  };
+			  
+			  if(ev.type == "panup"){
+		
+  				  sprites.play('lowhitom');
+  			  };
+			  
+  		  	});
+	
+	</script>
+	
+	</div>
+<div id="NE">
+
+<img draggable="false" (dragstart)="false;"
+		class='resize-fit-center'
+			src='HiHat-White-Bg-Feather.png'
+		 onmousedown="this.src='Open-HiHat-Hit.png'"
+    onmouseup="this.src='HiHat-White-Bg-Feather.png'"
+	
+		 ontouchstart="this.src='Open-HiHat-Hit.png'"
+    ontouchend="this.src='HiHat-White-Bg-Feather.png'"
+		/>
+
+
+	<script>
+	
+		
+			var myElement = document.getElementById('NE');
+
+			// create a simple instance
+			// by default, it only adds horizontal recognizers
+			var mc = new Hammer(myElement);
+
+			// let the pan gesture support all directions.
+			// this will block the vertical scrolling on a touch-device while on the element
+			mc.get('pan').set({ direction: Hammer.DIRECTION_ALL,  });
+
+			// listen to events...
+			mc.on("panleft panright panup pandown tap press", function(ev) {
+			   // myElement.textContent = ev.type +" gesture detected.";
+				
+  			  console.log(ev.type);
+			  console.log(ev.deltaX);
+			  
+  			  if(ev.type == "tap"){
+		
+  				  sprites.play('hihat');
+				  sprites.rate(myRate); 
+  			  };
+			  
+			  if(ev.type == "pandown"){
+		
+  				  sprites.play('clap');
+  			  };
+			  
+			  if(ev.type == "panup"){
+				if(ev.deltaY > 50){
+  				  sprites.play('openhihat');
+				  };
+  			  };
+			  
+			  if(ev.type == "panleft"){
+			  
+				 sprites.play('crash');
+				/*
+  				  hihat2.play();
+				  hihat2.loop();
+				  hihat2.rate(myRate * Math.round((ev.deltaX/10)));
+				 */
+  			  };
+			  
+			  if(ev.type == "panright"){
+		
+  				  hihat2.play('hihat2');
+				  hihat2.rate(myRate * (ev.deltaX/50)); 
+  			  };
+			  
+  		  	});
+	
+	</script>	
+	
+	
+	</div>
+<div id="SW">
+
+<img draggable="false" (dragstart)="false;"
+	class='resize-fit-center'
+		src='Kick-White-Bg-Feather.png'
+		 onmousedown="this.src='Kick-Hit.png'"
+    onmouseup="this.src='Kick-White-Bg-Feather.png'"
+	
+		 ontouchstart="this.src='Kick-Hit.png'"
+    ontouchend="this.src='Kick-White-Bg-Feather.png'"
+	
+	/>
+
+
+
+		<script>
+	
+		
+			var myElement = document.getElementById('SW');
+
+			// create a simple instance
+			// by default, it only adds horizontal recognizers
+			var mc = new Hammer(myElement);
+
+			// let the pan gesture support all directions.
+			// this will block the vertical scrolling on a touch-device while on the element
+			mc.get('pan').set({ direction: Hammer.DIRECTION_ALL });
+
+			// listen to events...
+			mc.on("panleft panright panup pandown tap press", function(ev) {
+			   // myElement.textContent = ev.type +" gesture detected.";
+				
+  			  console.log(ev.type);
+			  
+  			  if(ev.type == "tap"){
+		
+  				  kick2.play();
+  			  };
+			  
+			  if(ev.type == "pandown"){
+		
+  				  midtom2.play();
+  			  };
+			  
+			  if(ev.type == "panup"){
+		
+  				  snare2.play();
+  			  };
+			  
+			  if(ev.type == "panleft"){
+		
+  				  lowtom2.play();
+  			  };
+			  
+			  if(ev.type == "panright"){
+		
+  				  hitom2.play();
+  			  };
+			  
+  		  	});
+	
+	</script>
+	
+	</div>
+<div id="SE">
+
+	<img draggable="false" (dragstart)="false;" class='resize-fit-center'
+		src='Vinyl-White-Bg-Feather.png'
+		 onmousedown="this.src='Vinyl-Hit.png'"
+    onmouseup="this.src='Vinyl-White-Bg-Feather.png'"
+	
+		 ontouchstart="this.src='Vinyl-Hit.png'"
+    ontouchend="this.src='Vinyl-White-Bg-Feather.png'"
+		/>
+		
+
+		
+	<script>
+	
+		
+			var myElement = document.getElementById('SE');
+
+			// create a simple instance
+			// by default, it only adds horizontal recognizers
+			var mc = new Hammer(myElement);
+
+			// let the pan gesture support all directions.
+			// this will block the vertical scrolling on a touch-device while on the element
+			mc.get('pan').set({ direction: Hammer.DIRECTION_ALL });
+
+			// listen to events...
+			mc.on("panleft panright panup pandown tap press", function(ev) {
+			   // myElement.textContent = ev.type +" gesture detected.";
+				
+  			  console.log(ev.type);
+			  
+  			  if(ev.type == "tap"){
+		
+  				  sprites.play('snare');
+  			  };
+			  
+			  if(ev.type == "pandown"){
+		
+  				  sprites.play('rim');
+  			  };
+			  
+			  if(ev.type == "panup"){
+		
+  				  sprites.play('rim');
+  			  };
+			  
+			  if(ev.type == "panleft"){
+		
+  				  sprites.play('brush1');
+  			  };
+			  
+			  if(ev.type == "panright"){
+		
+  				  sprites.play('brush2');
+  			  };
+			  
+  		  	});
+	
+	</script>
+		
+	</div>
+	
+	<div id="menu">
+	<script>
+		document.getElementById("menu").onclick = function () {
+        location.href = "file:///C:/Users/Thomas/Desktop/PILOT-Pivot/PILOT-Menu.html";
+    };
+	
+	menu.onmousedown = function(){
+				menu.style.background='yellow';
+				menu.style.height="4vw";
+				menu.style.width="4vw";
+				};
+				
+	menu.onmouseup = function(){
+				menu.style.background='yellow';
+				menu.style.height="6vw";
+				menu.style.width="6vw";
+				};
+	</script>
+	</div>
+	
+ <script>
+ /*
+			NW.onmousedown = function(){
+				NW.style.backgroundImage='url(Snare-White-Bg.png';
+				};
+				
+				NW.onmouseup = function(){
+				NW.style.backgroundColor='#4a4a4a';
+				};
+				
+			SW.onmousedown = function(){
+				SW.style.backgroundColor='orange';
+				};
+				
+				SW.onmouseup = function(){
+				SW.style.backgroundColor='#4a4a4a';
+				};
+ */
+ </script>
+
+
+	
+	</body>
+	
+	</html>

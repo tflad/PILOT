@@ -1,0 +1,147 @@
+html, body { height:100%; margin:0; padding:0 }
+div { position:fixed; width:50%; height:50% }
+
+#NW-Image { top:0;   left:0;  
+
+	text-align: center;
+	overflow:hidden
+	}
+	
+#NW { top:0;   left:0;  
+
+	text-align: center;
+	overflow:hidden;
+	background-color: transparent;
+	}
+
+#NE-Image { 
+	top:0;   left:50%;  
+	text-align: center;
+	overflow:hidden
+	}
+	
+#NE {
+    top:0; left:50%;
+    text-align: center;
+	overflow:hidden;
+	background-color: transparent;
+    
+    }
+
+#SW-Image {
+	top:50%; left:0;   
+	text-align: center;
+	overflow:hidden
+	}	
+
+#SW { 
+	top:50%; left:0;   
+	text-align: center;
+	overflow:hidden;
+	background-color: transparent;
+
+	}
+	
+#SE-Image { 
+	top:50%; left:50%; 
+	text-align: center;
+	overflow:hidden
+	}
+	  
+#SE { 
+	top:50%; left:50%; 
+	text-align: center;
+	overflow:hidden;
+	  user-drag: none; 
+	user-select: none;
+  -moz-user-select: none;
+  -webkit-user-drag: none;
+  -webkit-user-select: none;
+  -ms-user-select: none;
+	  
+	} 
+	 
+#StartOldImage {
+	
+	width:100%;
+	height:100%;
+
+	float: top;
+	
+	background-repeat: no-repeat;
+}
+
+#Start {
+	
+	background-color: #ff9e2c;
+  position: absolute;
+  left: 0px;
+  width: 50%;
+  height:100%;
+  padding: 20px;
+  box-sizing: border-box;
+
+}
+
+#Start-Text{
+	 position: relative;
+    top: 50%;
+    left: 50%;
+	
+	  font-family: 'Catamaran', 'Helvetica', sans-serif;
+	  font-size: 1vw;
+    text-align: justify;
+	vertical-align: middle;
+	letter-spacing: 3px;
+	word-spacing: 5px;
+	color: white;
+}
+
+#NE-Start-Image {
+    top:0; left:50%;
+    text-align: center;
+	overflow:hidden;
+	
+    
+    }
+
+#NE-Start {
+    top:0; left:50%;
+    text-align: center;
+	overflow:hidden;
+	background-color: transparent;
+    
+    }
+	
+#SE-Start-Image {
+	top:50%; left:50%; 
+	text-align: center;
+	overflow:hidden  ;  
+	
+	} 
+	
+#SE-Start { 
+	top:50%; left:50%; 
+	text-align: center;
+	overflow:hidden  ;  
+	background-color: transparent;  
+	} 
+	
+#menu {
+	border-radius: 50%;
+  width: 5vw; 
+    height: 5vw; /* height:width ratio = 9/16 = .5625  */
+    background: #dfde05;
+    max-height: 100vh;
+    max-width: 177.78vh; /* 16/9 = 1.778 */
+    margin: auto;
+    position: absolute;
+    top:0;bottom:0; /* vertical center */
+    left:0;right:0; /* horizontal center */
+}
+
+	 
+.resize-fit-center {
+    width:100%;
+    height:100%;
+}
