@@ -5,10 +5,9 @@
 	<script type="text/javascript" src="js/jquery-3.2.1.js"></script>
 	<script type="text/javascript" 	src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
 	<script type="text/javascript" src="js/jquery.touchSwipe.min.js"></script>
-	<script src="js/hammer.min.js" ></script>
-	<script src="js/howler.js-master/howler.js-master/dist/howler.min.js"> </script>
-	<script src="js/howler.js-master/howler.js-master/src/plugins/howler.spatial.js"> </script>
-	<link rel="stylesheet" type="text/css" href="pilot-style.css" />
+	<script src="https://raw.githack.com/tflad/PILOT/master/PILOT-Repository/js/hammer.min.js"> </script>
+	<script src="https://raw.githack.com/tflad/PILOT/master/PILOT-Repository/js/howler.js-master/howler.js-master/src/plugins/howler.spatial.js"> </script>
+	<link rel="stylesheet" type="text/css" href="https://raw.githack.com/tflad/PILOT/master/PILOT-Repository/pilot-style.css" />
 	<!--<script type="text/javascript" src='zingtouch-master/src/ZingTouch.js'></script>-->
 	
 	
@@ -24,7 +23,7 @@
 	
 	
 	var kick2 = new Howl({
-			src: ['kick.wav']
+			src: ['khttps://raw.githack.com/tflad/PILOT/master/PILOT-Repository/Kick.wav']
 				});
 
 				//sound2.play();
@@ -48,7 +47,7 @@
 						hihat2: [0, 900, true]}
 						});
 				var sprites = new Howl({
-				     src: ['http://127.0.0.1:8887/sprites-draft.mp3'],
+				     src: ['https://raw.githack.com/tflad/PILOT/master/PILOT-Repository/sprites-draft.mp3'],
 				     volume: 0.8,
 				     sprite: {
 				         lowtom: [0, 900],
@@ -116,12 +115,12 @@
 <div id="NW">	
 		<img draggable="false" (dragstart)="false;"
 		class='resize-fit-center'
-		src='Cowbell-White-Bg-Feather.png'
-		 onmousedown="this.src='Cowbell-Hit.png'"
-    onmouseup="this.src='Cowbell-White-Bg-Feather.png'"
+		src='https://raw.githack.com/tflad/PILOT/master/PILOT-Repository/Cowbell-White-Bg-Feather.png?raw=true'
+		 onmousedown="this.src='https://raw.githack.com/tflad/PILOT/master/PILOT-Repository/Cowbell-Hit.png?raw=true'"
+    onmouseup="this.src='https://raw.githack.com/tflad/PILOT/master/PILOT-Repository/Cowbell-White-Bg-Feather.png?raw=true'"
 	
-		 ontouchstart="this.src='Cowbell-Hit.png'"
-    ontouchend="this.src='Cowbell-White-Bg-Feather.png'"
+		 ontouchstart="this.src='https://raw.githack.com/tflad/PILOT/master/PILOT-Repository/Cowbell-Hit.png?raw=true'"
+    ontouchend="this.src='https://raw.githack.com/tflad/PILOT/master/PILOT-Repository/Cowbell-White-Bg-Feather.png?raw=true'"
 		/>
 
 	<script>
@@ -187,12 +186,12 @@
 
 <img draggable="false" (dragstart)="false;"
 		class='resize-fit-center'
-			src='HiHat-White-Bg-Feather.png'
-		 onmousedown="this.src='Open-HiHat-Hit.png'"
-    onmouseup="this.src='HiHat-White-Bg-Feather.png'"
+			src='https://raw.githack.com/tflad/PILOT/master/PILOT-Repository/HiHat-White-Bg-Feather.png?raw=true'
+		 onmousedown="this.src='https://raw.githack.com/tflad/PILOT/master/PILOT-Repository/Open-HiHat-Hit.png?raw=true'"
+    onmouseup="this.src='https://raw.githack.com/tflad/PILOT/master/PILOT-Repository/HiHat-White-Bg-Feather.png?raw=true'"
 	
-		 ontouchstart="this.src='Open-HiHat-Hit.png'"
-    ontouchend="this.src='HiHat-White-Bg-Feather.png'"
+		 ontouchstart="this.src=https://raw.githack.com/tflad/PILOT/master/PILOT-Repository/Open-HiHat-Hit.png?raw=true'"
+    ontouchend="this.src='https://raw.githack.com/tflad/PILOT/master/PILOT-Repository/HiHat-White-Bg-Feather.png?raw=true'"
 		/>
 
 
@@ -385,17 +384,17 @@
 	<div id="menu">
 	<script>
 		document.getElementById("menu").onclick = function () {
-        location.href = "file:///C:/Users/Thomas/Desktop/PILOT-Pivot/PILOT-Menu.html";
+        location.href = "https://raw.githack.com/tflad/PILOT/master/PILOT-Repository/index.html";
     };
 	
 	menu.onmousedown = function(){
-				menu.style.background='yellow';
+				menu.style.background='#e9e800';
 				menu.style.height="4vw";
 				menu.style.width="4vw";
 				};
 				
 	menu.onmouseup = function(){
-				menu.style.background='yellow';
+				menu.style.background='#e9e800';
 				menu.style.height="6vw";
 				menu.style.width="6vw";
 				};
